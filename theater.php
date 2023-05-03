@@ -11,24 +11,20 @@
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-
-  // Get the selected seats from the request
-  // $selectedSeats = $_POST['selectedSeats'];
-
-  // Update the database to mark the selected seats as booked
-  // $sql = "UPDATE seats SET is_booked = 1 WHERE seat_number IN (".implode(",", $selectedSeats).")";
-  // if ($conn->query($sql) === TRUE) {
-  //   echo "Seats booked successfully!";
-  // } else {
-  //   echo "Error updating record: " . $conn->error;
-  // }
-
   $sql = "SELECT seat_number, is_booked FROM seats";
     $result = $conn->query($sql);
 
   // Close the database connection
   $conn->close();
+
+  // created a database with just a table called seats, and in that table, 
+  // 2 columns, seat_number and is_booked so i could loop through it all and present it to the screen
+
+
+
 ?>
+
+
 
 
 <link rel="stylesheet" href="main.css">
